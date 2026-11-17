@@ -117,10 +117,39 @@ public class Ejercicio6 {
       DecimalFormat df = new DecimalFormat("$#,##0.00");
 
       while (opc != 5) {
+        System.out.println("\n\t <===== MENÚ DE OPCIONES =====>");
+        System.out.println("\n [1] Consultar estado");
+        System.out.println(" [2] Depositar");
+	System.out.println(" [3] Retirar");
+        System.out.println(" [4] Inversión");
+        System.out.println(" [5] Salir");
 
-      }
+        System.out.print("\n - Ingrese una opción: ");
+        opc = entrada.nextInt();
 
-    }
+	switch(opc) {
+
+	  case 1:
+	    System.out.println("\n\t===== CONSULTAR ESTADO ===== \n");
+            System.out.println(" * Token de sesión de la actividad: " + tokenSesion);
+            System.out.println(" * Saldo actual: " + df.format(saldo));
+	  break;
+
+
+	  case 5:
+      	    System.out.println("\n\t===== SALIR =====");
+            System.out.println("\n\tHasta luego, ¡BUEN DÍA!:)");
+            System.exit(0);      
+	  break;
+      
+          default: 
+            System.out.println("\n!OPCIÓN NO VÁLIDA!. Inténtalo de nuevo.\n");
+	}
+
+      }  // while
+
+    } // if
+
 
     entrada.close();
   }
