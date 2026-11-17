@@ -1,5 +1,5 @@
 /*
- * TICKET 4: TERMINAL BANCARIA ATM CORE (Ejercicio6.java)
+ * TICKET: TERMINAL BANCARIA ATM CORE
  *
  * OBJETIVO:
  * Construir el núcleo de un Cajero Automático integrando control de acceso,
@@ -62,14 +62,14 @@
  * REGLAS DE AUDITORÍA:
  * - Cero código copiado, todo escrito a mano desde cero.
  * - Cierra tu Scanner al finalizar el main.
- * - Compilar: javac -encoding UTF-8 Ejercicio6.java
- * - Ejecutar: java "-Dfile.encoding=UTF-8" Ejercicio6
+ * - Compilar: javac -encoding UTF-8 CajeroAutomatico.java
+ * - Ejecutar: java "-Dfile.encoding=UTF-8" CajeroAutomatico
  */
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class Ejercicio6 {
+public class CajeroAutomatico {
   public static void main(String[] args) {
     Scanner entrada = new Scanner(System.in,"UTF-8");
 
