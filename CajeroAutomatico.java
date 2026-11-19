@@ -135,10 +135,22 @@ public class CajeroAutomatico {
             System.out.println(" * Saldo actual: " + df.format(saldo));
 	  break;
 
+	  case 2:
+            System.out.println("\n\t===== DEPOSITAR =====\n");
+	    System.out.print(" ¿Cuánto dinero desea depositar? ");
+            double deposito = entrada.nextDouble();
+	    if (deposito <= 0) {
+	      System.out.println("\n ERROR: No puedes depositar " + df.format(0) + " pesos o números negativos.\n");
+	    } else {
+	        saldo += deposito; // saldo = saldo + deposito
+		operaciones++;
+                System.out.println(" * Saldo actualizado: " + df.format(saldo));
+	    }
+          break;
 
 	  case 5:
       	    System.out.println("\n\t===== SALIR =====");
-            System.out.println("\n     Hasta luego, ¡BUEN DÍA!:)");      
+            System.out.println("\n     Hasta luego, ¡BUEN DÍA!:)");
 	  break;
       
           default: 
