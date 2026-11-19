@@ -138,12 +138,11 @@ public class CajeroAutomatico {
 
 	  case 5:
       	    System.out.println("\n\t===== SALIR =====");
-            System.out.println("\n\tHasta luego, ¡BUEN DÍA!:)");
-            System.exit(0);      
+            System.out.println("\n     Hasta luego, ¡BUEN DÍA!:)");      
 	  break;
       
           default: 
-            System.out.println("\n!OPCIÓN NO VÁLIDA!. Inténtalo de nuevo.\n");
+            System.out.println("\n!OPCIÓN NO VÁLIDA! Inténtalo de nuevo.\n");
 	}
 
       }  // while
