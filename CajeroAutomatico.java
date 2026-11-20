@@ -133,6 +133,7 @@ public class CajeroAutomatico {
 	    System.out.println("\n\t===== CONSULTAR ESTADO ===== \n");
             System.out.println(" * Token de sesión de la actividad: " + tokenSesion);
             System.out.println(" * Saldo actual: " + df.format(saldo));
+	    System.out.println(" * Total retirado hoy: " + df.format(totalRetirado));
 	  break;
 
 	  case 2:
@@ -146,6 +147,20 @@ public class CajeroAutomatico {
 		operaciones++;
                 System.out.println(" * Saldo actualizado: " + df.format(saldo));
 	    }
+          break;
+
+	  case 3:
+            System.out.println("\n\t===== RETIRAR =====\n");
+	      System.out.print(" ¿Cuánto dinero desea retirar? ");
+              double retiro = entrada.nextDouble();
+	      if (retiro > 0 && retiro <= saldo) {
+	        saldo -= retiro; // saldo = saldo - retiro
+		operaciones++;
+		totalRetirado += retiro;
+		System.out.println("\n ¡RETIRO EXITOSO! Te queda " + df.format(saldo) + " pesos en tu cuenta.\n");
+	      } else {
+		System.out.println("\n¡ERROR! Dinero insuficiente o cantidad negativa escrita\n");
+	      }
           break;
 
 	  case 5:
