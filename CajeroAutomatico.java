@@ -97,7 +97,7 @@ public class CajeroAutomatico {
           if (numIntentos >= 2) {
             System.out.println("Te quedan " + numIntentos + " intentos, después de " + MAX_INTENTOS + " intentos serás bloquedo temporalmente.");
           } else if (numIntentos == 1) {
-	      System.out.println("¡Te queda " + numIntentos + " último intento! Ingresa correctamente la contraseña o serás bloquado. ");
+	      System.out.println("¡Te queda " + numIntentos + " último intento! Ingresa correctamente la contraseña o serás bloqueado. ");
           } else {
 	      System.out.println("\n\tTARJETA RETENIDA Y BLOQUEADA POR SEGURIDAD");
 	  }
@@ -134,6 +134,7 @@ public class CajeroAutomatico {
             System.out.println(" * Token de sesión de la actividad: " + tokenSesion);
             System.out.println(" * Saldo actual: " + df.format(saldo));
 	    System.out.println(" * Total retirado hoy: " + df.format(totalRetirado));
+	    operaciones++;
 	  break;
 
 	  case 2:
@@ -163,8 +164,24 @@ public class CajeroAutomatico {
 	      }
           break;
 
+	  case 4: 
+	    System.out.println("\n\t===== INVERSIÓN =====\n");
+            System.out.print(" ¿Cuál es el monto a invertir? ");
+            double inversion = entrada.nextDouble();
+	    System.out.print(" Cantidad de plazo en meses: ");
+	    int cantidadMeses = entrada.nextInt();
+	    if(inversion > 0 && cantidadMeses > 0) {
+	      double rendimientoCompuesto = Math.pow(TASA_MENSUAL, cantidadMeses) * inversion;
+              System.out.println("\n - Ganancia proyectada: " + df.format(rendimientoCompuesto));
+	      operaciones++;
+	    } else {
+                System.out.println("\n ERROR: La inversión no es posible, ya que la cantidad a invertir es menor o igual a "+ df.format(0) + " o la cantidad de meses es menor o igual a cero.\n");
+	    }
+	  break;
+
 	  case 5:
       	    System.out.println("\n\t===== SALIR =====");
+	    System.out.println("\n Cantidad de operaciones realizadas: " + operaciones);
             System.out.println("\n     Hasta luego, ¡BUEN DÍA!:)");
 	  break;
       
